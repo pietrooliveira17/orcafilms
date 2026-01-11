@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORCA FILMS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400&display=swap');
+
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --primary-color: #f39c12;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Roboto', sans-serif
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            cursor: none
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            font-family: var(--font-display);
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0))
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            font-size: 1.2rem;
+            transition: color .3s;
+            color: white;
+        }
+
+        nav a:hover {
+            color: var(--text-color)
+        }
+
+        .hero {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            text-align: left;
+            position: relative;
+            background-image: url('image/fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            padding-left: 10%;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(10, 10, 10, 1) 0%, rgba(10, 10, 10, 0.2) 100%);
+        }
+
+        .hero-content {
+            z-index: 10;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 10vw;
+            line-height: 1;
+            letter-spacing: 5px;
+            color: white;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-desc {
+            font-weight: bold !important;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: white;
+            margin-top: 1rem;
+            font-weight: 300;
+        }
+
+        .portfolio-section {
+            padding: 100px 5%
+        }
+
+        .portfolio-section h2 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 50px;
+            letter-spacing: 3px
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem
+        }
+
+        .project-card {
+            position: relative;
+            aspect-ratio: 16/10;
+            overflow: hidden;
+            border-radius: 5px;
+            transition: transform .3s ease-out
+        }
+
+        .project-card:hover {
+            transform: scale(1.03)
+        }
+
+        .project-card .bg-image {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform .5s ease-out
+        }
+
+        .project-card:hover .bg-image {
+            transform: scale(1.1)
+        }
+
+        .project-card .content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .4s, transform .4s
+        }
+
+        .project-card:hover .content {
+            opacity: 1;
+            transform: translateY(0)
+        }
+
+        .project-card .tag {
+            background-color: #015C91;
+            color: white;
+            padding: 5px 10px;
+            font-size: .7rem;
+            font-weight: bold;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-family: var(--font-body)
+        }
+
+        .project-card h3 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: #fff;
+            letter-spacing: 1px
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+
+    <header>
+        <div class="logo">ORCA FILMS</div>
+        <nav>
+            <a href="#filmes">Filmes</a>
+            <a href="#fotografias">Fotografias</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="Contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>ORCA FILMS</h1>
+                <p class="hero-desc">FILMAKING & PHOTOGRAPHY</p>
+                <P>Capturando o extraordinário através de lentes singulares.</P>
+            </div>
+        </section>
+
+        <section id="filmes" class="portfolio-section">
+            <h2>Filmes</h2>
+            <div class="project-grid">
+                <a href="filmes/mariaeduarda_rafael.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/mariaerafael.webp');"></div>
+                    <div class="content">
+                        <span class="tag">CASAMENTO</span>
+                        <h3>Maria Eduarda e Rafael</h3>
+                    </div>
+                </a>
+                <a href="filmes/amanda_juvenal.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/juvenal.png');"></div>
+                    <div class="content">
+                        <span class="tag">CASAMENTO</span>
+                        <h3>Amanda e Juvenal</h3>
+                    </div>
+                </a>
+                <a href="filmes/editorial.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/ThumbClinica.png');"></div>
+                    <div class="content">
+                        <span class="tag">PUBLICIDADE</span>
+                        <h3>Editorial - Clínica Viviane Machado</h3>
+                    </div>
+                </a>
+                <a href="filmes/cinematicSC.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/capaTripSc.png');"></div>
+                    <div class="content">
+                        <span class="tag">TRAVEL FILM</span>
+                        <h3>Cinematic SC</h3>
+                    </div>
+                </a>
+                <a href="filmes/fiodobigode.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/thumb.jpg');"></div>
+                    <div class="content">
+                        <span class="tag">CINEMATIC B-ROLL</span>
+                        <h3>B-ROLL Barbearia Fio do Bigode</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="fotografias" class="portfolio-section">
+            <h2>Fotografias</h2>
+            <div class="project-grid">
+                <a href="fotos/Urban_Sp.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/Urbansp/img3.jpg');"></div>
+                    <div class="content">
+                        <span class="tag">FOTOGRAFIA DE RUA</span>
+                        <h3>Urban SP</h3>
+                    </div>
+                </a>
+                <a href="fotos/despertardodragao.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/DespertarDoDragao/img1\ -\ Copia.jpg');">
+                    </div>
+                    <div class="content">
+                        <span class="tag">ENSAIO</span>
+                        <h3>Despertar do Dragão</h3>
+                    </div>
+                </a>
+                <a href="fotos/roadtrip.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/CamposdoJordao/Foto1.jpg');"></div>
+                    <div class="content">
+                        <span class="tag">FOTOGRAFIA DE RUA</span>
+                        <h3>Road Trip</h3>
+                    </div>
+                </a>
+                <a href="fotos/VivianeMachado.html" class="project-card">
+                    <div class="bg-image"
+                        style="background-image: url('image/EnsaioEsteticaEditado/IMG_9213\ \(1\).jpg');"></div>
+                    <div class="content">
+                        <span class="tag">ENSAIO</span>
+                        <h3>Clínica Viviane Machado</h3>
+                    </div>
+                </a>
+                <a href="fotos/viagemSC.html" class="project-card">
+                    <div class="bg-image" style="background-image: url('image/fundo.jpg');"></div>
+                    <div class="content">
+                        <span class="tag">TRAVEL FILM</span>
+                        <h3>Santa Catarina Trip</h3>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

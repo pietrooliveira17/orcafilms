@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Solitary Summits - Seu Portfólio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --background-color: #ffffff;
+            --text-color: #015C91;
+            --primary-color: black;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Roboto', sans-serif
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            font-family: var(--font-display);
+            letter-spacing: 2px
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold
+        }
+
+        nav a {
+            margin-left: 2rem;
+            font-size: 1.2rem;
+            transition: color .3s
+        }
+
+        nav a:hover {
+            color: var(--text-color)
+        }
+
+        .project-detail {
+            padding-top: 100px
+        }
+
+        .photo-gallery {
+            padding: 0 5%;
+            margin-bottom: 4rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .photo-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 3px;
+            cursor: none;
+            transition: transform 0.3s ease-out;
+        }
+
+        .photo-grid img:hover {
+            transform: scale(1.02);
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            padding: 0 5%;
+            margin-bottom: 5rem
+        }
+
+        .project-info h1 {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            line-height: 1;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem
+        }
+
+        .project-info .synopsis {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 60ch;
+            color: black;
+        }
+
+        .tech-details dt {
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: .5rem;
+            font-family: var(--font-display);
+            letter-spacing: 1px
+        }
+
+        .tech-details dd {
+            margin-left: 0;
+            margin-bottom: 1.5rem;
+            color: black;
+        }
+
+        .bts-gallery {
+            padding: 0 5%;
+            margin-bottom: 5rem
+        }
+
+        .bts-gallery h2 {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 2px
+        }
+
+        .bts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem
+        }
+
+        .bts-grid img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 3px
+        }
+
+        @media (max-width:768px) {
+            .project-info {
+                grid-template-columns: 1fr
+            }
+
+            .project-info h1 {
+                font-size: 3rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-dot"></div>
+    <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+
+    <header>
+        <a href="../index.html" class="logo interactive">ORCA FILMS</a>
+        <nav>
+            <a href="../index.html#fotografias" class="interactive">Voltar às Fotografias</a>
+        </nav>
+    </header>
+
+    <main>
+        <article class="project-detail">
+
+            <section class="photo-gallery">
+                <div class="photo-grid">
+                    <img src="../image/CamposdoJordao/Foto1.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto2.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto9.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto4.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto5.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto6.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto3.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto8.jpg" alt="Imagem da Galeria 1" class="interactive">
+                    <img src="../image/CamposdoJordao/Foto7.jpg" alt="Imagem da Galeria 1" class="interactive">
+                </div>
+            </section>
+
+            <section class="project-info">
+                <div class="description">
+                    <h1>Road Trip</h1>
+                    <p class="synopsis">
+                        Um ensaio fotográfico documental sobre a vastidão e a solidão das paisagens montanhosas. Cada
+                        imagem busca capturar a escala monumental da natureza em contraste com a presença humana
+                        efêmera. Explore a beleza crua e imponente dos picos solitários através destas lentes.
+                    </p>
+                </div>
+                <aside class="tech-details">
+                    <dl>
+                        <div>
+                            <dt>Fotógrafo</dt>
+                            <dd>Road Trip</dd>
+                        </div>
+                        <div>
+                            <dt>Locação</dt>
+                            <dd>Campos do Jordão</dd>
+                        </div>
+                        <div>
+                            <dt>Ano</dt>
+                            <dd>2025</dd>
+                        </div>
+                        <div>
+                            <dt>Equipamento</dt>
+                            <dd>Canon T6i, Lente EF 50mm</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </section>
+
+        </article>
+    </main>
+
+
+</body>
+
+</html>

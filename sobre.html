@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Mim - ORCA FILMS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400&display=swap');
+
+        :root {
+            --background-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #015C91;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            overflow-x: hidden;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            font-family: var(--font-display);
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        .logo-top {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff !important;
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 2rem;
+            font-size: 1.2rem;
+            text-decoration: none;
+            color: #ffffff;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            min-height: 100vh;
+            align-items: center;
+            padding: 0 8%;
+            gap: 2rem;
+        }
+
+        .hero-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .typing-title {
+            font-family: var(--font-display);
+            font-size: 8rem;
+            color: var(--accent-color);
+            line-height: 0.9;
+            display: flex;
+            align-items: center;
+        }
+
+        .type-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 6.5rem;
+            background-color: var(--accent-color);
+            margin-left: 15px;
+            animation: blink 0.7s infinite;
+            transition: opacity 0.8s ease;
+            opacity: 1;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cursor-hidden {
+            animation: none !important;
+            opacity: 0 !important;
+        }
+
+        .about-text h1 {
+            font-family: var(--font-display);
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .about-text .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            max-width: 550px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            font-family: var(--font-display);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 1100px) {
+            .typing-title {
+                font-size: 5rem;
+            }
+
+            .type-cursor {
+                height: 4rem;
+            }
+        }
+
+        @media (max-width: 850px) {
+            .about-container {
+                grid-template-columns: 1fr;
+                padding-top: 150px;
+                text-align: center;
+                justify-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo-top">ORCA FILMS</a>
+        <nav>
+            <a href="index.html#filmes">Filmes</a>
+            <a href="index.html#fotografias">Fotografias</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="Contato.html">Contato</a>
+        </nav>
+    </header>
+
+    <main class="about-container">
+        <section class="hero-left">
+            <h2 class="typing-title">
+                <span id="typing-text"></span><span id="cursor" class="type-cursor"></span>
+            </h2>
+        </section>
+
+        <section class="about-text">
+            <h1>O Propósito por Trás da Lente</h1>
+            <span class="subtitle">Art Direction & Filmmaking</span>
+            <p>A ORCA Films não é uma produtora de vídeos e fotos. Não prometemos conteúdos bonitos com qualidade
+                profissional e cinematográfica — isso é o mínimo.</p>
+            <p>Somos um pivô de crescimento para empresas. Através das nossas produções, buscamos construir
+                posicionamentos fortes e um sucesso sustentável no mercado.</p>
+            <a href="Contato.html" class="cta-button">Vamos Conversar</a>
+        </section>
+    </main>
+
+    <script>
+        const text = "ORCA FILMS";
+        const target = document.getElementById("typing-text");
+        const cursor = document.getElementById("cursor");
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                target.innerHTML += text.charAt(i);
+                i++;
+                let speed = 200;
+                setTimeout(typeWriter, speed);
+            } else {
+                setTimeout(() => {
+                    cursor.classList.add("cursor-hidden");
+                }, 3000);
+            }
+        }
+
+        window.onload = typeWriter;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editorial - Clínica Viviane Machado</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --background-color: #ffffff;
+            --text-color: #015C91;
+            --primary-color: black;
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-body: 'Roboto', sans-serif
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            font-family: var(--font-display);
+            letter-spacing: 2px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%)
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white
+        }
+
+        nav a {
+            margin-left: 2rem;
+            font-size: 1.2rem;
+            transition: color .3s;
+            color: white
+        }
+
+        nav a:hover {
+            color: var(--text-color)
+        }
+
+        .project-detail {
+            padding-top: 100px
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%
+        }
+
+        .project-info {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+            padding: 4rem 8%
+        }
+
+        .description h1 {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            line-height: 1
+        }
+
+        .synopsis {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            font-weight: 300;
+            color: #333
+        }
+
+        .tech-details dl div {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee
+        }
+
+        .tech-details dt {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: .9rem
+        }
+
+        @media (max-width:900px) {
+            .project-info {
+                grid-template-columns: 1fr;
+                padding: 2rem 5%
+            }
+
+            .description h1 {
+                font-size: 3rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html" class="logo">ORCA FILMS</a>
+        <nav><a href="../index.html#filmes">Voltar aos Filmes</a></nav>
+    </header>
+    <main>
+        <article class="project-detail">
+            <section class="project-hero">
+                <div class="video-container">
+                    <iframe
+                        src="https://player.vimeo.com/video/1106093409?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+                        frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                        title="Editorial Clínica Viviane Machado"></iframe>
+                </div>
+            </section>
+            <section class="project-info">
+                <div class="description">
+                    <h1>Editorial - Clínica Viviane Machado</h1>
+                    <p class="synopsis">Explore a harmonia entre o que é visível e o que é sentido, onde a beleza
+                        exterior é o reflexo direto de um profundo bem-estar interior.</p>
+                </div>
+                <aside class="tech-details">
+                    <dl>
+                        <div>
+                            <dt>Diretor</dt>
+                            <dd>Murillo Macedo</dd>
+                        </div>
+                        <div>
+                            <dt>Cinematografia</dt>
+                            <dd>Murillo Macedo</dd>
+                        </div>
+                        <div>
+                            <dt>Ano</dt>
+                            <dd>2025</dd>
+                        </div>
+                        <div>
+                            <dt>Modelo</dt>
+                            <dd>Izadora Machado</dd>
+                        </div>
+                    </dl>
+                </aside>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
